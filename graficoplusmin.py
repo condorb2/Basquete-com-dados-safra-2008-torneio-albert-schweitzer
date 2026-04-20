@@ -3,46 +3,24 @@ import matplotlib.pyplot as plt
 jogadores = ["Mathias", "Pedrinho", "Gluck"]
 medias = [9.7, 4.5, 8.8]
 
-plt.figure()
-
-plt.bar(jogadores, medias)
-
-plt.title("Média Final de Plus/Minus")
-plt.xlabel("Jogadores")
-plt.ylabel("Plus/Minus")
-
-plt.ylim(0, 12)
-
-for i, v in enumerate(medias):
-    plt.text(i, v + 0.2, f"{v}", ha='center')
-
-plt.show()
-
-
-
-labels = [
-    "M+P+G",
-    "M+P",
-    "M+G",
-    "P+G",
-    "Mathias",
-    "Pedrinho",
-    "Gluck"
-]
-
+labels = ["M+P+G", "M+P", "M+G", "P+G", "Mathias", "Pedrinho", "Gluck"]
 valores = [5.0, 3.0, 11.0, 0.0, 4.3, 2.0, 1.7]
 
-plt.figure(figsize=(10, 5))
+fig, axs = plt.subplots(1, 2, figsize=(12, 5))
 
-plt.bar(labels, valores)
+axs[0].bar(jogadores, medias)
+axs[0].set_title("Média Final de Plus/Minus")
+axs[0].set_ylim(0, 12)
 
-plt.title("Impacto das Combinações em Quadra")
-plt.xlabel("Formações")
-plt.ylabel("Plus/Minus")
+for i, v in enumerate(medias):
+    axs[0].text(i, v + 0.2, f"{v}", ha='center')
 
-plt.ylim(0, 12)
+axs[1].bar(labels, valores)
+axs[1].set_title("Impacto das Combinações")
+axs[1].set_ylim(0, 12)
 
 for i, v in enumerate(valores):
-    plt.text(i, v + 0.2, f"{v}", ha='center')
+    axs[1].text(i, v + 0.2, f"{v}", ha='center')
 
+plt.tight_layout()
 plt.show()
