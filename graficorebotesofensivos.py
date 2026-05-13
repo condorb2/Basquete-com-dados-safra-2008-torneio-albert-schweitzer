@@ -19,8 +19,8 @@ plt.title('Efetividade dos rebotes ofensivos de Isaiah Santos')
 
 plt.text(
     0,
-    -1.3,
-    '33 rebotes totais | 23 bons | 10 maus',
+    -1.35,
+    '33 rebotes totais | 23 bons | 10 maus\nTotal de jogos: 6',
     ha='center',
     fontsize=11
 )
