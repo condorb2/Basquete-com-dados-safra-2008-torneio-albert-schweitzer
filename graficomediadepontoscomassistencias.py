@@ -17,7 +17,7 @@ plt.figure(figsize=(11, 5))
 plt.bar(jogadores, medias)
 
 plt.title("Armadores que Mais Combinaram Médias de Assistências e Pontos")
-plt.ylim(0, 22)
+plt.ylim(0, 25)
 
 for i, v in enumerate(medias):
     plt.text(i, v + 0.2, f"{v}", ha='center')
